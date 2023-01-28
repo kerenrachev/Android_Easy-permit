@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.WelcomeActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="#314161"
+        android:gravity="center_vertical"
+        >
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/loading_IMG_logo"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            app:lottie_url="https://assets7.lottiefiles.com/packages/lf20_p8bfn5to.json"
+            app:lottie_autoPlay="true"
+            android:layout_gravity="center_horizontal"
+            app:lottie_loop="true"/>
+        <TextView
+            android:id="@+id/welcome_TXT_top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Welcome to"
+            android:textColor="@color/white"
+            android:layout_gravity="center_horizontal"
+            android:textSize="32dp">
+
+        </TextView>
+        <TextView
+            android:id="@+id/welcome_TXT_bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PermsGuard"
+            android:textColor="@color/white"
+            android:layout_gravity="center_horizontal"
+            android:textSize="48dp">
+
+        </TextView>
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/splash_IMG_logo"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            app:lottie_url="https://assets7.lottiefiles.com/packages/lf20_hvzjb7o5.json"
+            app:lottie_autoPlay="true"
+            android:layout_gravity="center_horizontal"
+            app:lottie_loop="true"/>
+
+
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

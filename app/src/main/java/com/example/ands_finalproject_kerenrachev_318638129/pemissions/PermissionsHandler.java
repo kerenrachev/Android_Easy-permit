@@ -1,29 +1,26 @@
-package com.example.ands_finalproject_kerenrachev_318638129;
+package com.example.ands_finalproject_kerenrachev_318638129.pemissions;
 
 import static android.content.pm.PackageInfo.REQUESTED_PERMISSION_GRANTED;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.content.Context;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
-import android.os.Bundle;
 import android.util.Log;
 
+import java.net.ConnectException;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class PermissionsHandler {
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+    private final Context context;
 
-        getPermissions();
+    public PermissionsHandler(Context context){
+        this.context = context;
     }
 
     private void getPermissions() {
-        PackageManager pm = getPackageManager();
+        PackageManager pm = context.getPackageManager();
         // Get all packages using package manager
         List<ApplicationInfo> packages = pm.getInstalledApplications(PackageManager.GET_META_DATA);
 
@@ -39,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
             appNameAndPermissions.append("**********************************************************************************\n");
             appNameAndPermissions.append("\napplicationInfo.packageName: "+applicationInfo.packageName+"\n");
-            appNameAndPermissions.append("\naApplication name: " + applicationInfo.loadLabel(getPackageManager()).toString()+"\n");
+            appNameAndPermissions.append("\naApplication name: " + applicationInfo.loadLabel(context.getPackageManager()).toString()+"\n");
             try {
 
                 // Get package info by package name and collect all requested permissions
@@ -52,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
                     for (int i = 0; i < requestedPermissions.length; i++) {
 
                         if(requestedPermissions[i].toString().startsWith("android.permission")
-                                    && (packageInfo.requestedPermissionsFlags[i] & REQUESTED_PERMISSION_GRANTED) != 0)
+                                && (packageInfo.requestedPermissionsFlags[i] & REQUESTED_PERMISSION_GRANTED) != 0)
                             appNameAndPermissions.append(requestedPermissions[i]+"\n");
                     }
                     appNameAndPermissions.append("\n");
