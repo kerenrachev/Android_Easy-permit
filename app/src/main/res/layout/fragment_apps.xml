@@ -1,14 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.Fragment_apps">
+    android:orientation="vertical"
+    tools:context=".activities.MainActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#3D4F71"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/title_TXT_apps"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#FFC107"
+                android:textSize="24dp"
+                android:paddingTop="10dp"
+                android:paddingLeft="10dp"
+                android:text="Applications">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+            </TextView>
+            <TextView
+                android:id="@+id/title_TXT_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#FFC107"
+                android:paddingLeft="10dp"
+                android:paddingBottom="10dp"
+                android:textSize="12dp"
+                android:text="">
+
+
+            </TextView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:orientation="vertical"
+                android:background="#FFC107">
+
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/apps_LST_items"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Apps fragment" />
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:spanCount="2"
+        tools:listitem="@layout/list_apps_item"
+        />
 
-</FrameLayout>
+</LinearLayout>

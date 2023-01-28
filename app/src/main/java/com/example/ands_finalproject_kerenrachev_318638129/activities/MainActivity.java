@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.example.ands_finalproject_kerenrachev_318638129.R;
+import com.example.ands_finalproject_kerenrachev_318638129.adapters.ApplicationsAdapter;
+import com.example.ands_finalproject_kerenrachev_318638129.adapters.PermissionsAdapter;
 import com.example.ands_finalproject_kerenrachev_318638129.fragments.Fragment_apps;
 import com.example.ands_finalproject_kerenrachev_318638129.fragments.Fragment_home;
 import com.example.ands_finalproject_kerenrachev_318638129.fragments.Fragment_permissions;
@@ -20,6 +22,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        ApplicationsAdapter.getMe().setAppCompatActivity(this);
+        PermissionsAdapter.getMe().setAppCompatActivity(this);
         openHomeFragment();
         setBottomNavView();
     }
