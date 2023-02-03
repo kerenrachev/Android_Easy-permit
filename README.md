@@ -43,11 +43,12 @@ PermsGuard makes your device secure!.
 
  - Click on "Applications" to view all the applications in device.
  - Click on specific application to get the list of permissions granted to the application.
+ - Filter application's permissions by All/Risky/Not Risky.
 </h5>
 
-|View all applications|View application's permissions|
-|--|--|
-|<img src="https://media3.giphy.com/media/lqIJ2GGGRM6uIjSHSC/giphy.gif" alt="animated"/>|<img src="https://media0.giphy.com/media/QufDbjxs7maED4NnC6/giphy.gif" alt="animated"/>|
+|View all applications|View application's permissions|Filter permissions|
+|--|--|--|
+|<img src="https://media3.giphy.com/media/lqIJ2GGGRM6uIjSHSC/giphy.gif" alt="animated"/>|<img src="https://media0.giphy.com/media/QufDbjxs7maED4NnC6/giphy.gif" alt="animated"/>|<img src="https://media1.giphy.com/media/LiS2TcWb2cwKqAH6Xe/giphy.gif" alt="animated"/>|
 
 </br>
 
