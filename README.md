@@ -41,15 +41,13 @@ PermsGuard makes your device secure!.
 ### 👔: Applications
 <h5>
 
- - Only a user who has created a service giver card will be able to view listed jobs.
- - When a user without a service card clicks on "Jobs", the application will suggest him to create a service card.
- - Users can offer themselves for a job, which will send a notification to the job poster.
- - Users can post a new job to find a cleaner.
- - Users can view only OTHER people's jobs at this point.</h5>
+ - Click on "Applications" to view all the applications in device.
+ - Click on specific application to get the list of permissions granted to the application.
+</h5>
 
-|View Jobs and make an offer|Create New Job|
+|View all applications|View application's permissions|
 |--|--|
-|<img src="https://media.giphy.com/media/JS7mhYEFoRnbB7jWAZ/giphy.gif" alt="animated"/>|<img src="https://media.giphy.com/media/ON3Blh5pjz37Fv3K63/giphy.gif" alt="animated"/>|
+|<img src="https://media3.giphy.com/media/lqIJ2GGGRM6uIjSHSC/giphy.gif" alt="animated"/>|<img src="https://media0.giphy.com/media/QufDbjxs7maED4NnC6/giphy.gif" alt="animated"/>|
 
 </br>
 
