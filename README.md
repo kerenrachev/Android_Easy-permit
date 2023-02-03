@@ -23,23 +23,18 @@ PermsGuard makes your device secure!.
 
 
 ## :space_invader: Features and technologies
-- FireBase storage
-- FireBase Auth
-- FireBase Realtime DB
-- Google maps
-- Google Places Auto Complete
+- Use of package manager.
 - Recycle Views\ Adapters
 - Fragments
 - Navigator bars
 - Animations
-- Realtime Notifications
 
 ## :framed_picture: Screen Gifs
 
-### :iphone: Login\ Sign Up
+### :iphone: Splash Activity
 |Login to account|Create account|Logout|
 |--|--|--|
-|<img src="https://media.giphy.com/media/NwaYMQdhULhU7BCc2A/giphy.gif" alt="animated"/>|<img src="https://media.giphy.com/media/tCIQSofpyNMwA5swNf/giphy.gif" alt="animated"/>|<img src="https://media.giphy.com/media/4B0tR1Skn7JHW1Ir4W/giphy.gif" alt="animated"/>|
+|<img src="https://giphy.com/embed/6TOOgzFzW4uYtHRZXQ" alt="animated"/>|<img src="https://media.giphy.com/media/tCIQSofpyNMwA5swNf/giphy.gif" alt="animated"/>|<img src="https://media.giphy.com/media/4B0tR1Skn7JHW1Ir4W/giphy.gif" alt="animated"/>|
 
 </br>
 
