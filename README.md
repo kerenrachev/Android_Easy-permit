@@ -31,7 +31,7 @@ PermsGuard makes your device secure!.
 ## :framed_picture: Screen Gifs
 
 ### :iphone: Welcome Activity
-|Login to account|
+|Welcome screen|
 |--|
 |<img src="https://media2.giphy.com/media/6TOOgzFzW4uYtHRZXQ/giphy.gif" alt="animated"/>|
 
