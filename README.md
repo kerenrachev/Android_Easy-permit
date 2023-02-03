@@ -17,9 +17,8 @@ PermsGuard makes your device secure!.
   
 ## :link: Menu:
 
-- [Features](https://github.com/kerenrachev/WeClean_Android/blob/master/README.md#framed_picture-features-and-technologies)</br>
-- [Screen Gifs](https://github.com/kerenrachev/WeClean_Android/blob/master/README.md#iphone-screen-gifs)</br>
-- [Future Plan](https://github.com/kerenrachev/WeClean_Android/blob/master/README.md#pencil-future-plan)</br>
+- [Features](https://github.com/kerenrachev/Android_Easy-permit/blob/master/README.md#space_invader-features-and-technologies)</br>
+- [Screen Gifs](https://github.com/kerenrachev/Android_Easy-permit/blob/master/README.md#framed_picture-screen-gifs)</br>
 
 
 ## :space_invader: Features and technologies
