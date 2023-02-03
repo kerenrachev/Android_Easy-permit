@@ -31,14 +31,14 @@ PermsGuard makes your device secure!.
 
 ## :framed_picture: Screen Gifs
 
-### :iphone: Splash Activity
+### :iphone: Welcome Activity
 |Login to account|
 |--|
 |<img src="https://media2.giphy.com/media/6TOOgzFzW4uYtHRZXQ/giphy.gif" alt="animated"/>|
 
 </br>
 
-### 👔: Jobs
+### 👔: Applications
 <h5>
 
  - Only a user who has created a service giver card will be able to view listed jobs.
@@ -53,7 +53,7 @@ PermsGuard makes your device secure!.
 
 </br>
 
-### 📇: Service Cards
+### 📇: Permissions
 
  - Users can create their own service giver card to start make offers on jobs.
  - Users can view all service givers cards, see more details, ratings, etc.
@@ -62,33 +62,4 @@ PermsGuard makes your device secure!.
 |Create Service Card|View Service Cards|More Deatils|Rate Service Card|
 |--|--|--|--|
 |<img src="https://media.giphy.com/media/XVPoUNEsqmtDgX7ebV/giphy.gif" alt="animated"/>|<img src="https://media.giphy.com/media/3KttrfQb9tfbuqnIdg/giphy.gif" alt="animated"/>|<img src="https://media.giphy.com/media/69xbRl38qMYWRkKJEZ/giphy.gif" alt="animated"/>|<img src="https://media.giphy.com/media/ddaFKn22Z7c2BhSSRc/giphy.gif" alt="animated"/>|
-
-</br>
-
-### 🔔: Notifications
-
- - Two types of notifications: Comment- when someone is rating my service card, and Offer- when someone is offering himself for a job I've posted. Each type has a different icon.
- - Realtime notifications
- - Notifications are sorted from newest to oldest.
- - New notifications count marked in red.
- - New notification has a "new" icon</h5>
-
-|Show Notifications|
-|--|
-|<img src="https://media.giphy.com/media/2aupQURcCNADCKN9zw/giphy.gif" alt="animated"/>|
-
-</br>
-
-
-
-## :pencil: Future Plan 
-- Edit profile
-- Edit Service Card
-- Delete Profile
-- Delete Service Card
-- Create new Fragment for job offers
-- Show time passed in notifications, comments, and jobs
-- Calculate distance from user to Jobs
-
-
 
