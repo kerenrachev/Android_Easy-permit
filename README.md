@@ -1,5 +1,4 @@
-<p align="center">![image](https://user-images.githubusercontent.com/61757368/216605825-7bfe6f62-f995-4818-838d-a5df42492df8.png)
-</p>
+![image](https://user-images.githubusercontent.com/61757368/216605882-8d1f7ca8-3e22-439e-b324-f3c19a0e41fd.png)
 <br/>
 <h3 align="center">Android App</h3>
 <h1 align="center">Welcome To We Clean!</h1>
