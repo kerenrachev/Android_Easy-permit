@@ -1,7 +1,10 @@
 <span align="center">![image](https://user-images.githubusercontent.com/61757368/216605882-8d1f7ca8-3e22-439e-b324-f3c19a0e41fd.png)</span>
+<p align="center">
+    <img width="200" src="[http://material-bread.org/logo-shadow.svg](https://user-images.githubusercontent.com/61757368/216605882-8d1f7ca8-3e22-439e-b324-f3c19a0e41fd.png)" alt="Material Bread logo">
+</p>
 <br/>
 <h3 align="center">Android App</h3>
-<h1 align="center">Welcome To We Clean!</h1>
+<h1 align="center">Welcome To PermsGuard!</h1>
 
 
 ## :information_source: About 
