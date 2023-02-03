@@ -13,7 +13,7 @@
         android:clickable="true"
         android:layout_margin="10dp"
         app:cardElevation="5dp"
-        app:cardCornerRadius="18dp"
+        app:cardCornerRadius="9dp"
         >
 
         <androidx.appcompat.widget.LinearLayoutCompat
@@ -21,7 +21,23 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:background="#FFFFFF">
+            <LinearLayout
+                android:id="@+id/permissions_IMG_user"
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:background="#3D4F71"
+                android:gravity="center"
+                android:orientation="horizontal">
+                <ImageView
+                    android:id="@+id/permission_IMG_isrisky"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_ok">
 
+                </ImageView>
+            </LinearLayout>
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_weight="1"
@@ -35,26 +51,25 @@
                     android:textStyle="bold"
                     android:textColor="#5A5A5A"
                     android:padding="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
                     android:layout_gravity="center_vertical"
                     android:textSize="16sp" />
-
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/permissions_TXT_instructions"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="2dp"
+                    android:text="Please consider removing this permission."
+                    android:textColor="#C66666"
+                    android:textSize="10sp"
+                    android:visibility="gone"
+                    android:textStyle="bold" />
             </LinearLayout>
-            <LinearLayout
-                android:id="@+id/permissions_IMG_user"
-                android:layout_width="70dp"
-                android:layout_height="match_parent"
-                android:scaleType="centerCrop"
-                android:background="#3D4F71"
-                android:gravity="center"
-                android:orientation="horizontal">
-                <ImageView
-                    android:layout_width="15dp"
-                    android:layout_height="15dp"
-                    android:layout_gravity="center"
-                    android:src="@drawable/ic_doublearrow_pink">
 
-                </ImageView>
-            </LinearLayout>
 
 
         </androidx.appcompat.widget.LinearLayoutCompat>

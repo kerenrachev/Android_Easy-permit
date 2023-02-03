@@ -110,8 +110,8 @@ public class ApplicationsAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
 
                 @Override
                 public void onClick(View view) {
-
-                    Fragment_permissions fragment_permissions = new Fragment_permissions( apps_TXT_name.getText().toString(),apps_IMG_icon.getDrawable(), applications.get(getAdapterPosition()).getPermissions(), 0);
+                    // Clicking on the card will open a new fragment of permissions, which will display all the app's granted permissions.
+                    Fragment_permissions fragment_permissions = new Fragment_permissions( apps_TXT_name.getText().toString(),apps_IMG_icon.getDrawable(), applications.get(getAdapterPosition()).getPermissions(), 0, applications.get(getAdapterPosition()).getApplicationPackage());
                     appCompatActivity.getSupportFragmentManager().beginTransaction().replace(R.id.panel_FRAME_content, fragment_permissions).commit();
                 }
             });

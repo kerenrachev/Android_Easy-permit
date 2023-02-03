@@ -31,11 +31,16 @@ public class Fragment_apps extends Fragment {
     private Boolean isGrid = false;
     private String permissionName;
     private ArrayList<Application> allApplications;
+
+    // This constructor is called when the user clicks on "Apps" in the Navbar (will display all apps in device)
     public Fragment_apps() {
         ApplicationsAdapter.getMe().setGrid(false);
         allApplications = PermissionsHandler.getMe().getApplications();
     }
 
+    // This constructor is called when the user clicks on one of the permissions in the permissions fragment.
+    // @param: applications: all the applications that use the specific permission
+    // @param: permissionName: The permission name.
     public Fragment_apps(boolean isGrid, ArrayList<Application> applications, String permissionName) {
         ApplicationsAdapter.getMe().setGrid(isGrid);
         this.isGrid = isGrid;
@@ -53,7 +58,9 @@ public class Fragment_apps extends Fragment {
     }
 
     private void initAdapter() {
+        // Set the applications
         ApplicationsAdapter.getMe().setApplications(allApplications);
+        // if isGrid = false, the user wants to display all the applications in the device -> Linear view
         if(!isGrid)
             apps_LST_items.setLayoutManager(new LinearLayoutManager(getContext()));
         else {

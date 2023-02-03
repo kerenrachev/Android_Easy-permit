@@ -21,6 +21,8 @@ public class PermissionsHandler {
     private static PermissionsHandler me;
 
     private Context context;
+
+    // Holds all the applications in user's device.
     private ArrayList<Application> applications;
 
     // HashMap that holds the permission name as key, and permission object as value.
@@ -65,11 +67,6 @@ public class PermissionsHandler {
             if(isSystemApp) continue;
             if(!applicationInfo.sourceDir.startsWith("/data/app/")) continue;
 
-            //StringBuffer appNameAndPermissions=new StringBuffer();
-            //appNameAndPermissions.append("**********************************************************************************\n");
-            //appNameAndPermissions.append("\napplicationInfo.packageName: "+applicationInfo.packageName+"\n");
-            //appNameAndPermissions.append("\naApplication name: " + applicationInfo.loadLabel(context.getPackageManager()).toString()+"\n");
-
 
             Application app = new Application();
             app.setPermissions(new ArrayList<>());
@@ -77,7 +74,6 @@ public class PermissionsHandler {
             app.setApplicationName(applicationInfo.loadLabel(context.getPackageManager()).toString());
             app.setApplicationIcon(pm.getApplicationIcon(applicationInfo));
 
-           // applications.add(app);
             try {
 
                 // Get package info by package name and collect all requested permissions
@@ -115,17 +111,14 @@ public class PermissionsHandler {
                             app.getPermissions().add(permissions.get(permissionName));
                         }
                     }
-                    //appNameAndPermissions.append("\n");
                 }
-                //else Log.d("pttt", "Permissions are null...");
                 applications.add(app);
-               // Log.d("pttt",appNameAndPermissions.toString());
             } catch (Exception e) {
                 e.printStackTrace();
             }
         }
     }
-
+    // Given the permission name, check if it is listed in the "BlackPermissionsList" (hard-coded risky permissions in android)
     private boolean checkIfPermissionRisky(String permissionName) {
         for(String permissionInBlackList: BlackPermissionsList.getMe().getBlackList()){
             if(permissionName.contains(permissionInBlackList)) return true;

@@ -31,12 +31,23 @@
                 android:id="@+id/permissions_TXT_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="#FFA7A7"
+                android:textColor="#FFC107"
                 android:textSize="20dp"
+                android:layout_weight="1"
                 android:layout_marginBottom="10dp"
                 android:text="Permissions In Device">
 
             </TextView>
+            <ImageView
+                android:id="@+id/permissions_IMG_settings"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:visibility="gone"
+                android:src="@drawable/ic_settings">
+
+            </ImageView>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -46,7 +57,7 @@
                 android:id="@+id/Perms_BTN_all"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="#FFA7A7"
+                android:background="#FFC107"
                 android:padding="10dp">
                 <TextView
                     android:layout_width="wrap_content"
@@ -76,7 +87,7 @@
                 android:id="@+id/Perms_BTN_notrisky"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="#FFA7A7"
+                android:background="#FFC107"
                 android:padding="10dp">
                 <TextView
                     android:layout_width="wrap_content"
@@ -93,7 +104,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="5dp"
                 android:orientation="vertical"
-                android:background="#FFA7A7"
+                android:background="#FFC107"
                 android:layout_gravity="bottom">
 
             </LinearLayout>

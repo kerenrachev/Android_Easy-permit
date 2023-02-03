@@ -13,11 +13,13 @@ import com.example.ands_finalproject_kerenrachev_318638129.fragments.Fragment_ap
 import com.example.ands_finalproject_kerenrachev_318638129.fragments.Fragment_home;
 import com.example.ands_finalproject_kerenrachev_318638129.fragments.Fragment_permissions;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.button.MaterialButton;
 import com.google.android.material.navigation.NavigationBarView;
 
 public class MainActivity extends AppCompatActivity {
 
     private BottomNavigationView bottomNavigationView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,11 +31,13 @@ public class MainActivity extends AppCompatActivity {
         setBottomNavView();
     }
 
+    // Open the home fragment by default
     private void openHomeFragment() {
         Fragment_home fragment_home = new Fragment_home();
         getSupportFragmentManager().beginTransaction().replace(R.id.panel_FRAME_content, fragment_home).commit();
     }
 
+    // Manages the bottom nav clicks
     private void setBottomNavView() {
         bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {

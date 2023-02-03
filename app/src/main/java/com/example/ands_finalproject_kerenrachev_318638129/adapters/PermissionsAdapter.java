@@ -63,7 +63,14 @@ public class PermissionsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
     public void onBindViewHolder(RecyclerView.ViewHolder viewHolder, int position) {
         final PermissionHolder holder = (PermissionHolder) viewHolder;
         Permission permission = getItem(position);
-
+        if(permission.getRisky()){
+            holder.permission_IMG_isrisky.setImageDrawable(context.getDrawable(R.drawable.ic_risky));
+            holder.permissions_TXT_instructions.setVisibility(View.VISIBLE);
+        }
+        else{
+            holder.permission_IMG_isrisky.setImageDrawable(context.getDrawable(R.drawable.ic_ok));
+            holder.permissions_TXT_instructions.setVisibility(View.GONE);
+        }
         holder.permissions_TXT_name.setText(permission.getPermissionName().split("\\.")[2].replace('_', ' '));
     }
 
@@ -82,15 +89,19 @@ public class PermissionsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
 
         private MaterialTextView permissions_TXT_name;
         private MaterialCardView card;
+        private ImageView permission_IMG_isrisky;
+        private MaterialTextView permissions_TXT_instructions;
         public PermissionHolder(View itemView) {
             super(itemView);
             permissions_TXT_name = itemView.findViewById(R.id.permissions_TXT_name);
             card = itemView.findViewById(R.id.card);
+            permission_IMG_isrisky = itemView.findViewById(R.id.permission_IMG_isrisky);
+            permissions_TXT_instructions = itemView.findViewById(R.id.permissions_TXT_instructions);
             card.setOnClickListener(new View.OnClickListener(){
 
                 @Override
                 public void onClick(View view) {
-
+                    // Clicking on the permission, will open the app fragment in Grid mode, which will list all the apps that use this specific permission.
                     Fragment_apps fragment_apps = new Fragment_apps(true, permissions.get(getAdapterPosition()).getApplications(), permissions_TXT_name.getText().toString());
                     appCompatActivity.getSupportFragmentManager().beginTransaction().replace(R.id.panel_FRAME_content, fragment_apps).commit();
                 }

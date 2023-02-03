@@ -1,6 +1,8 @@
 package com.example.ands_finalproject_kerenrachev_318638129.fragments;
 
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -8,6 +10,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.provider.Settings;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,14 +36,15 @@ public class Fragment_permissions extends Fragment {
     private LinearLayout Perms_BTN_all;
     private LinearLayout Perms_BTN_risky;
     private LinearLayout Perms_BTN_notrisky;
+    private ImageView permissions_IMG_settings;
     private ArrayList<Permission> allPermissions;
     private ArrayList<Permission> riskyPermissions;
     private ArrayList<Permission> nonRiskyPermissions;
     private String title;
     private Drawable appIcon;
-
+    private Boolean isSpecificAppPermissions;
     private ArrayList<LinearLayout> permission_type_buttons;
-
+    private String applicationPackageName;
 
     // 0: All permissions, 1: Risky permissions, 2: Not risky permissions
     private int type = 0;
@@ -52,17 +56,21 @@ public class Fragment_permissions extends Fragment {
             allPermissions.add(currPerm.getValue());
         }
         initiatePermissionsByRisk();
+        isSpecificAppPermissions = false;
     }
 
     // This constructor will be called when the user clicks on one of the applications from the applications list.
-    public Fragment_permissions(String title, Drawable appIcon, ArrayList<Permission> permissions, int type) {
+    public Fragment_permissions(String title, Drawable appIcon, ArrayList<Permission> permissions, int type, String applicationPackageName) {
         allPermissions= permissions;
         initiatePermissionsByRisk();
         this.title = title;
         this.appIcon = appIcon;
         this.type = type;
+        this.applicationPackageName = applicationPackageName;
+        isSpecificAppPermissions = true;
     }
 
+    // Fill the riskyPermissions && nonRiskyPermissions arrays.
     private void initiatePermissionsByRisk() {
         riskyPermissions = new ArrayList<>();
         nonRiskyPermissions = new ArrayList<>();
@@ -85,7 +93,7 @@ public class Fragment_permissions extends Fragment {
         setTitle();
         setClickListeners();
         initAdapter();
-
+        setSettingsButton();
         return view;
     }
 
@@ -100,17 +108,18 @@ public class Fragment_permissions extends Fragment {
             if(i == type)
                 current.setBackgroundResource(R.color.white);
             else
-                current.setBackgroundResource(R.color.light_pink);
+                current.setBackgroundResource(R.color.light_orange);
         }
     }
 
+    // Clicking on one of the options (All/Risky/Not Risky) will re-initiate this fragment with the specific selected type (0/1/2).
     private void setClickListeners() {
         Perms_BTN_all.setOnClickListener(new View.OnClickListener(){
 
             @Override
             public void onClick(View view) {
 
-                Fragment_permissions fragment_permissions = new Fragment_permissions( title,appIcon, allPermissions, 0);
+                Fragment_permissions fragment_permissions = new Fragment_permissions( title,appIcon, allPermissions, 0, applicationPackageName);
                 getParentFragmentManager().beginTransaction().replace(R.id.panel_FRAME_content, fragment_permissions).commit();
 
             }
@@ -119,7 +128,7 @@ public class Fragment_permissions extends Fragment {
 
             @Override
             public void onClick(View view) {
-                Fragment_permissions fragment_permissions = new Fragment_permissions( title,appIcon, allPermissions, 1);
+                Fragment_permissions fragment_permissions = new Fragment_permissions( title,appIcon, allPermissions, 1, applicationPackageName);
                 getParentFragmentManager().beginTransaction().replace(R.id.panel_FRAME_content, fragment_permissions).commit();
             }
         });
@@ -127,19 +136,36 @@ public class Fragment_permissions extends Fragment {
 
             @Override
             public void onClick(View view) {
-                Fragment_permissions fragment_permissions = new Fragment_permissions( title,appIcon, allPermissions, 2);
+                Fragment_permissions fragment_permissions = new Fragment_permissions( title,appIcon, allPermissions, 2, applicationPackageName);
                 getParentFragmentManager().beginTransaction().replace(R.id.panel_FRAME_content, fragment_permissions).commit();
             }
         });
     }
 
+    // If fragment displaying list of permissions for specific app, replace the title, to indicate which app's permissions are displayed, and display the app icon.
     private void setTitle() {
-        if(allPermissions == null){
+        if(isSpecificAppPermissions){
             permissions_TXT_title.setText(this.title + "'s Permissions");
             permissions_IMG_icon.setImageDrawable(this.appIcon);
         }
     }
 
+    // If fragment displaying list of permissions for specific app, display the "Setting" orange button, which will open the current application settings screen in device.
+    private void setSettingsButton(){
+        if(isSpecificAppPermissions){
+            permissions_IMG_settings.setVisibility(View.VISIBLE);
+            permissions_IMG_settings.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+                    Uri uri = Uri.fromParts("package", applicationPackageName, null);
+                    intent.setData(uri);
+                    startActivity(intent);
+                }
+            });
+        }
+    }
+    // Conditionally set the permissions list in the adapter, depending on user selection (All\Risky\Not risky)
     private void initAdapter() {
 
         switch (type){
@@ -166,5 +192,6 @@ public class Fragment_permissions extends Fragment {
         Perms_BTN_all = view.findViewById(R.id.Perms_BTN_all);
         Perms_BTN_risky = view.findViewById(R.id.Perms_BTN_risky);
         Perms_BTN_notrisky = view.findViewById(R.id.Perms_BTN_notrisky);
+        permissions_IMG_settings = view.findViewById(R.id.permissions_IMG_settings);
     }
 }
