@@ -55,11 +55,11 @@ PermsGuard makes your device secure!.
 
 ### 📇: Permissions
 
- - Users can create their own service giver card to start make offers on jobs.
- - Users can view all service givers cards, see more details, ratings, etc.
- - Users can rate other's service givers cards and leave comments, which will send notification to the service giver.</h5>
+ - Click on "Permissions" to view all granted permissions in your device.
+ - Clik on specific permission to get the list of applications that use this permission.
+ - Click on one of the applications to view all the permissions that the application uses.</h5>
 
-|Create Service Card|View Service Cards|More Deatils|Rate Service Card|
-|--|--|--|--|
-|<img src="https://media.giphy.com/media/XVPoUNEsqmtDgX7ebV/giphy.gif" alt="animated"/>|<img src="https://media.giphy.com/media/3KttrfQb9tfbuqnIdg/giphy.gif" alt="animated"/>|<img src="https://media.giphy.com/media/69xbRl38qMYWRkKJEZ/giphy.gif" alt="animated"/>|<img src="https://media.giphy.com/media/ddaFKn22Z7c2BhSSRc/giphy.gif" alt="animated"/>|
+|View all permissions|View application that use the permission|View application's permissions|
+|--|--|--|
+|<img src="https://media1.giphy.com/media/Dhsb4aoajam3SJ2tHX/giphy.gif" alt="animated"/>|<img src="https://media0.giphy.com/media/wDjOk1JSTDvyrzQ7Tq/giphy.gif" alt="animated"/>|<img src="https://media1.giphy.com/media/NPT0NfuYkIt8dwhr8T/giphy.gif" alt="animated"/>|
 
